@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+
+    <style>
+
+      body {
+        margin: 50px;
+        justify-items: center;
+        background-color: cornflowerblue;
+      }
+
+      button {
+        padding: 5px 8px;
+        border: 1px solid grey;
+        border-radius: 4px;
+      }
+
+      div {
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <p class="js-calculation"></p>
+
+    <div>
+      <button onclick="
+          totalCalculation('1');
+        ">1</button>
+      <button onclick="
+          totalCalculation('2');
+        ">2</button>
+      <button onclick="
+          totalCalculation('3');
+        ">3</button>
+      <button onclick="
+          totalCalculation('+');
+      ">+</button>
+    </div>
+
+    <div>
+      <button onclick="
+          totalCalculation('4');
+        ">4</button>
+      <button onclick="
+          totalCalculation('5');
+        ">5</button>
+      <button onclick="
+          totalCalculation('6');
+        ">6</button>
+      <button onclick="
+          totalCalculation('-');
+      ">-</button>
+    </div>
+
+    <div>
+      <button onclick="
+          totalCalculation('7');
+        ">7</button>
+      <button onclick="
+          totalCalculation('8');
+        ">8</button>
+      <button onclick="
+          totalCalculation('9');
+        ">9</button>
+      <button onclick="
+          totalCalculation('*');
+        ">*</button>
+    </div>
+
+    <div>
+      <button onclick="
+          totalCalculation('0');
+        ">0</button>
+      <button onclick="
+          totalCalculation('.');
+        ">.</button>
+      <button onclick="
+        // Note: eval() takes a string and runs it as code.
+        // Avoid using eval() in real world projects since
+        // it can potentially be given harmful code to run.
+        // Only use eval() for learning purposes.
+        calculation = eval(calculation);
+        displayCalculation();
+        // 2 localStorage.setItem('calculation', calculation);
+        saveCalculation();
+      ">=</button>
+      <button onclick="
+          totalCalculation('/');
+      ">/</button>
+    </div>
+    
+    <div>
+      <button onclick="
+        calculation = '';
+        displayCalculation();
+        // 1 wrong localStorage.removeItem('calculation');
+        saveCalculation();
+      ">Clear</button>
+    </div>
+
+    <script>
+
+      // 1 wrong let calculation = '' || JSON.parse(localStorage.getItem ('calculation')); 
+      let calculation = localStorage.getItem('calculation') || '';
+      
+      /* 1)
+      localStorage = 'calculation'; {
+        if (localStorage || calculation) {
+          console.log('Clear');
+        } else {
+          console.log(localStorage.calculation);
+        }
+      } */
+
+      displayCalculation();
+
+      function totalCalculation(value) {
+        calculation += value;
+        displayCalculation();
+
+        localStorage.setItem('calculation', calculation);
+        // 1 wrong localStorage.setItem('calculation', JSON.stringify(calculation));
+      }
+
+      // Optional: you can also create a function in order
+      // to reuse this code.
+      function saveCalculation() {
+        localStorage.setItem('calculation', calculation);
+      }
+
+      function displayCalculation() {
+        document.querySelector('.js-calculation')
+          .innerHTML = calculation;
+      }
+
+
+    </script>
+    
+
+  </body>
+</html>

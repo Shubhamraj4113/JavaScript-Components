@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+
+    <style>
+
+      body {
+        margin: 50px;
+        justify-items: center;
+        background-color: cornflowerblue;
+      }
+
+      button {
+        padding: 5px 8px;
+        border: 1px solid grey;
+        border-radius: 4px;
+      }
+
+      div {
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!--
+    <div>
+      <button onclick="
+          calculation += '1';
+          console.log(calculation);
+        ">1</button>
+      <button onclick="
+          calculation += '2';
+          console.log(calculation);
+        ">2</button>
+      <button onclick="
+          calculation += '3';
+          console.log(calculation);
+        ">3</button>
+    </div>
+
+    <div>
+      <button onclick="
+          calculation += '4';
+          console.log(calculation);
+        ">4</button>
+      <button onclick="
+          calculation += '5';
+          console.log(calculation);
+        ">5</button>
+      <button onclick="
+          calculation += '6';
+          console.log(calculation);
+        ">6</button>
+    </div>
+
+    <div>
+      <button onclick="
+          calculation += '7';
+          console.log(calculation);
+        ">7</button>
+      <button onclick="
+          calculation += '8';
+          console.log(calculation);
+        ">8</button>
+      <button onclick="
+          calculation += '9';
+          console.log(calculation);
+        ">9</button>
+    </div>
+
+    <div>
+      <button onclick="
+          calculation += '+';
+          console.log(calculation);
+        ">+</button>
+      <button onclick="
+          calculation += '0';
+          console.log(calculation);
+        ">0</button>
+      <button onclick="
+          eval(calculation); 
+          calculation = eval(calculation);
+          console.log(calculation);
+        ">=</button>
+    </div> -->
+
+    <div>
+      <button onclick="
+          totalCalculation('1');
+        ">1</button>
+      <button onclick="
+          totalCalculation('2');
+        ">2</button>
+      <button onclick="
+          totalCalculation('3');
+        ">3</button>
+      <button onclick="
+          totalCalculation('+');
+      ">+</button>
+    </div>
+
+    <div>
+      <button onclick="
+          totalCalculation('4');
+        ">4</button>
+      <button onclick="
+          totalCalculation('5');
+        ">5</button>
+      <button onclick="
+          totalCalculation('6');
+        ">6</button>
+      <button onclick="
+          totalCalculation('-');
+      ">-</button>
+    </div>
+
+    <div>
+      <button onclick="
+          totalCalculation('7');
+        ">7</button>
+      <button onclick="
+          totalCalculation('8');
+        ">8</button>
+      <button onclick="
+          totalCalculation('9');
+        ">9</button>
+      <button onclick="
+          totalCalculation('*');
+        ">*</button>
+    </div>
+
+    <div>
+      <button onclick="
+          totalCalculation('0');
+        ">0</button>
+      <button onclick="
+          totalCalculation('.');
+        ">.</button>
+      <button onclick="
+        // Note: eval() takes a string and runs it as code.
+        // Avoid using eval() in real world projects since
+        // it can potentially be given harmful code to run.
+        // Only use eval() for learning purposes.
+        calculation = eval(calculation);
+        console.log(calculation);
+      ">=</button>
+      <button onclick="
+          totalCalculation('/');
+      ">/</button>
+    </div>
+    
+    <div>
+      <button onclick="
+        calculation = '';
+        console.log(calculation);
+      ">Clear</button>
+    </div>
+    
+
+    <script>
+
+      let calculation = '';
+
+      function totalCalculation(value) {
+        calculation += value;
+        console.log(calculation);
+      }
+
+    </script>
+    
+
+  </body>
+</html>
