@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Booleans and if-statements</title>
+  </head>
+  <body>
+    
+    <button onclick="
+
+      /*
+      const randomNumber = Math.random();
+      const name = 'Shubham';
+
+      let computerMove = '';
+
+      if (randomNumber >= 0 && randomNumber < 1/3) {
+        computerMove = 'Good morning!';
+      } else if (randomNumber >= 1/3 && randomNumber < 2/3) {
+        computerMove = 'Good afternoon!';
+      } else if (randomNumber >= 2/3 && randomNumber < 1) {
+        computerMove = 'Good night';
+      }
+
+      alert (`${computerMove} ${name}`); 
+
+
+    ">Time</button>
+
+    <button onclick="
+      /*randomNumber = Math.random();
+      let result;
+
+      if (randomNumber <= 0.5) {
+        result = 'heads';
+      } else {
+        result = 'tails';
+      }
+      console.log(result);
+
+      const guess = 'heads';
+
+      if (guess === result) {
+        console.log('You win!');
+      } else {
+        console.log('You lose!');
+      }*/
+
+      const randomNumber = Math.random();
+      const result = randomNumber < 0.5 ? 'heads' : 'tails'; // [?  :] ternary operator.
+
+      const guess = 'heads';
+      console.log(guess === result ? 'You win!' : 'You lose!');
+
+
+    ">Flip</button>
+
+
+    <script>
+      const hour = 9;
+
+      if (hour >= 6 && hour <= 12) {
+        console.log(`Good morning! ${name}`);
+      } else if (hour >= 13 && hour <= 17) {
+        console.log(`Good afternoon! ${name}`);
+      } else {
+        console.log(`Good night! ${name}`);
+      } 
+
+      const age = 67;
+      const isHoliday = true;
+
+      if ((age <= 6 || age >= 65) && !isHoliday) {
+        console.log('Discount');
+      } else {
+        console.log('No discount');
+      }
+
+      
+
+    </script>
+  </body>
+</html>
