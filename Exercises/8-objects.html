@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Objects</title>
+  </head>
+  <body>
+    
+    <script>
+
+      const product1 = {
+        name: 'Basketball',
+        price: 2095,
+      }
+      console.log(product1);
+
+      product1.price += 500;
+      console.log(product1);
+
+      product1['delivery-time'] = '3 days';
+      console.log(product1);
+
+      const product2 = {
+        name: 'socks',
+        price: 1090,
+      }
+
+      function comparePrice(product1, product2) {
+        if (product1.price < product2.price) {
+          return product1;
+        } else {
+          return product2;
+        }
+      };
+
+      console.log(comparePrice(product1, product2));
+
+      /*
+      function isSameProduct(product3, product4) {
+        if (
+          product3.name === product4.name &&
+          product3.price === product4.price
+        ) {
+          return true;
+        } else {
+          return false;
+        }
+      } */
+
+      // Here is an alternative solution that uses less code.
+      function isSameProduct(product3, product4) {
+        return (
+          product3.name === product4.name &&
+          product3.price === product4.price
+        );
+      }
+
+      const product3 = {
+        name: 'basketball',
+        price: 2095
+      };
+
+      const product4 = {
+        name: 'socks',
+        price: 1090
+      };
+
+      const product5 = {
+        name: 'basketball',
+        price: 2095
+      };
+
+      console.log(isSameProduct(product3, product4));
+      console.log(isSameProduct(product3, product5));
+
+      console.log('Good Morning'.toLowerCase());
+      console.log('test'.repeat(2));
+
+    </script>
+  </body>
+</html>
