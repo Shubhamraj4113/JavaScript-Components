@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document Object Model</title>
+  </head>
+  <body>
+    <button onclick="
+      console.log(document.querySelector('button'));
+    ">9a</button>
+
+    <button class="js-btn-9b" onclick="
+      document.querySelector('.js-btn-9b')
+        .innerHTML = '9b done'
+    ">9b</button>
+
+    <p>.</p>
+
+    <button onclick="
+      //coinFlip('heads');
+      document.querySelector('.js-choice')
+        .innerHTML = 'You chose: heads';
+    ">heads</button>
+    <button onclick="
+      //coinFlip('tails');
+      document.querySelector('.js-choice')
+        .innerHTML = 'You chose: tails';
+    ">tails</button>
+
+    <p class="js-choice"></p>
+
+    <p>.</p>
+    
+    <!--
+    <input class="js-input" placeholder="Your name" type="text">
+    <button onclick="
+      YourName();
+    ">Submit</button> 
+
+    <input class="js-name-input" placeholder="Name" type="text" onkeydown="handleCostKeydown(event);">
+
+    <button onclick="
+      yourName();
+    ">Submit</button>
+    <p class="js-message"></p> -->
+
+    <input placeholder="Name" class="js-name-input"
+      onkeydown="
+        if (event.key === 'Enter') {
+          displayMessage();
+        }
+      ">
+
+    <button onclick="
+      displayMessage();
+    ">Submit</button>
+
+    <p class="js-message"></p>
+
+    
+    <script>
+
+      function displayMessage() {
+        const inputElement = document.querySelector('.js-name-input');
+        document.querySelector('.js-message')
+          .innerHTML = `Your name is: ${inputElement.value}`;
+      }
+
+      /*
+      function yourName() {
+        const inputElement = document.querySelector('.js-name-input');
+        document.querySelector('.js-message')
+          .innerHTML = `Your name is: ${inputElement.value}`;
+      }
+
+      function handleCostKeydown(event) {
+        if (event.key === 'Enter') {
+          yourName();
+        }
+      }*/
+
+      /*
+      function YourName() {
+        const inputElement = document.querySelector('.js-input');
+        inputElement.value = 'Shubham'
+      }*/
+      
+
+      /*
+      function coinFlip(Choice) {
+
+        if (Choice === 'heads') {
+          document.querySelector('.js-flip-result')
+          .innerHTML = 'You chose: heads'
+        } else if (Choice === 'tails') {
+          document.querySelector('.js-flip-result')
+          .innerHTML = 'You chose: tails'
+        }
+
+      } */
+
+
+
+      
+
+    </script>
+  </body>
+</html>
