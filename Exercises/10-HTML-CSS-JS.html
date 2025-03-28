@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML CSS JavaScript</title>
+    <style>
+      body {
+        font-family: arial;
+        color: rgb(255, 255, 255);
+      }
+
+       /* The word "toggle" means turn on/off. */
+       .toggle-button {
+        background-color: rgb(230, 230, 230);
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        margin-right: 10px;
+        font-size: 15px;
+        cursor: pointer;
+      }
+      .is-toggled {
+        background-color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
+      }
+
+    </style>
+  </head>
+  <body>
+    <!--
+    <button class="js-button">Test</button>-->
+
+    <button class="toggle-button js-button" onclick="
+      toggleButton('.js-button');
+    ">Gaming</button>
+
+    <button class="toggle-button js-button-2" onclick="
+      toggleButton('.js-button-2');
+    ">Music</button>
+
+    <button class="toggle-button js-button-3" onclick="
+      toggleButton('.js-button-3');
+    ">Tech</button>
+
+    
+    <script>
+
+      function toggleButton(selector) {
+        const button = document.querySelector(selector);
+        if (!button.classList.contains('is-toggled')) {
+
+          // Before turning this button ON, check if there's
+          // already a button that's turned ON and turn it OFF.
+          turnOffPreviousButton();
+
+          button.classList.add('is-toggled');
+        } else {
+          button.classList.remove('is-toggled');
+        }
+      }
+
+      function turnOffPreviousButton() {
+        const previousButton = document.querySelector('.is-toggled');
+        if (previousButton) {
+          previousButton.classList.remove('is-toggled');
+        }
+      }
+
+      /*
+      const button = document.querySelector('.js-button');
+      console.log(button.classList.contains('.js-button'));
+      */
+    </script>
+  </body>
+</html>
