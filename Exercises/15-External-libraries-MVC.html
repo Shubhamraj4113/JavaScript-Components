@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>lesson 15</title>
+  </head>
+  <body>
+    
+    <script type="module">
+      import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
+
+      /*
+      const today = dayjs();
+      let date = today.add(5, 'days');
+      let dayString = date.format('MMMM D');
+      console.log(dayString);
+
+      date = today.add(1, 'month');
+      dayString = date.format('MMMM D');
+      console.log(dayString);
+
+      date = today.subtract(1, 'month');
+      dayString = date.format('MMMM D');
+      console.log(dayString);
+
+      dayString = today.format('dddd');
+      console.log(dayString);
+
+      default export
+      */
+
+      function isWeekend(date) {
+        const dayOfWeek = date.format('dddd');
+        return dayOfWeek === 'Saturday' || dayOfWeek === 'Sunday';
+      }
+
+      // Test this function using a few different dates.
+      let date = dayjs();
+      console.log(date.format('dddd, MMMM D'));
+      console.log(isWeekend(date));
+
+      date = dayjs().add(2, 'day');
+      console.log(date.format('dddd, MMMM D'));
+      console.log(isWeekend(date));
+
+      date = dayjs().add(4, 'day');
+      console.log(date.format('dddd, MMMM D'));
+      console.log(isWeekend(date));
+
+      date = dayjs().add(6, 'day');
+      console.log(date.format('dddd, MMMM D'));
+      console.log(isWeekend(date));
+
+
+    </script>
+  </body>
+</html>
